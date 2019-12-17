@@ -5,8 +5,8 @@
     grid-column-gap: 3rem;
     grid-row-gap: 3rem;
     @include respond(phone) {
-        grid-template-columns: repeat(1, 1fr);
-      }
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   .section__business--financial &__container {
     display: grid;
@@ -21,8 +21,58 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @include respond(phone) {
-        grid-template-columns: repeat(1, 1fr);
-      }
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .section__business--technology &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .section__business--technology & {
+    position: relative;
+    min-height: 47.5rem;
+    &__text {
+      width: 100%;
+      padding: 0 3rem;
+      @include absCenter;
+    }
+    &:nth-child(1) {
+      background-image: linear-gradient(
+          to bottom,
+          rgba($color-black, 0.5),
+          rgba($color-black, 0.5)
+        ),
+        url(../img/tech_01.jpg);
+    }
+    &:nth-child(2) {
+      background-image:  linear-gradient(
+        to bottom,
+        rgba($color-black, 0.5),
+        rgba($color-black, 0.5)
+      ),url(../img/tech_02.jpg);
+    }
+    &:nth-child(3) {
+      background-image:  linear-gradient(
+        to bottom,
+        rgba($color-black, 0.5),
+        rgba($color-black, 0.5)
+      ),url(../img/tech_03.jpg);
+    }
+    &:nth-child(4) {
+      background-image: linear-gradient(
+        to bottom,
+        rgba($color-black, 0.5),
+        rgba($color-black, 0.5)
+      ), url(../img/tech_04.jpg);
+    }
   }
 
   &__shape {

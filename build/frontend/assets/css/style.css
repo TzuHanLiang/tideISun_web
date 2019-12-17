@@ -193,6 +193,9 @@ body {
     .u-margin-bottom-big {
       margin-bottom: 5rem !important; } }
 
+.u-margin-top-small {
+  margin-top: 1.5rem !important; }
+
 .u-margin-top-big {
   margin-top: 8rem !important; }
 
@@ -222,9 +225,10 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn-outline {
+  display: inline-block;
   border-radius: 5px;
   color: #fff;
-  border: 2px solid #fff; }
+  border: 2px solid #fff !important; }
   .btn-outline > i {
     font-weight: bold;
     transform: translateY(7px); }
@@ -290,7 +294,7 @@ body {
   transform: rotate(-45deg); }
 
 .feature-box {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -298,6 +302,21 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform .3s;
   min-height: 34.3rem; }
+  .feature-box__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .feature-box__container {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 0rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .feature-box__container {
+        grid-template-columns: repeat(1, 1fr); } }
+  @media only screen and (max-width: 56.25em) {
+    .feature-box {
+      min-height: 0rem; } }
   @media only screen and (max-width: 56.25em) {
     .feature-box {
       padding: 2rem; } }
@@ -338,7 +357,35 @@ body {
       grid-template-columns: repeat(2, 1fr); } }
   @media only screen and (max-width: 37.5em) {
     .section__business--financial .story__container {
+      grid-template-columns: repeat(2, 1fr); } }
+
+.section__business--technology .story__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .section__business--technology .story__container {
       grid-template-columns: repeat(1, 1fr); } }
+
+.section__business--technology .story {
+  position: relative;
+  min-height: 47.5rem; }
+  .section__business--technology .story__text {
+    width: 100%;
+    padding: 0 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .section__business--technology .story:nth-child(1) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/tech_01.jpg); }
+  .section__business--technology .story:nth-child(2) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/tech_02.jpg); }
+  .section__business--technology .story:nth-child(3) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/tech_03.jpg); }
+  .section__business--technology .story:nth-child(4) {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/tech_04.jpg); }
 
 .story__shape {
   width: 100%;
@@ -677,7 +724,13 @@ body {
   max-width: 126rem;
   margin: 0 auto;
   padding: 0 3rem; }
-  .section__about {
+  @media only screen and (max-width: 75em) {
+    .section {
+      padding: 0 10rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .section {
+      padding: 0 3rem; } }
+  .section-about {
     padding-top: 15rem;
     background-image: url(../img/second_bg_03.jpg);
     background-position: center;
@@ -698,3 +751,21 @@ body {
     .section__business--financial {
       padding-bottom: 15rem;
       border-bottom: 1px solid #666; }
+    .section__business--technology {
+      padding-bottom: 15rem;
+      border-bottom: 1px solid #666; }
+      .section__business--technology .leading-text-box {
+        margin: 3rem auto;
+        padding: 6rem;
+        position: relative;
+        overflow: hidden; }
+        .section__business--technology .leading-text-box--background {
+          width: 100%;
+          position: absolute;
+          bottom: 50%;
+          left: 0;
+          transform: scale(2);
+          pointer-events: none;
+          z-index: -1; }
+        .section__business--technology .leading-text-box .paragraph--leading {
+          line-height: 2.4; }

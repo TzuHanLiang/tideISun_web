@@ -35,9 +35,10 @@
 }
 
 .btn-outline {
+  display: inline-block;
   border-radius: 5px;
   color: $color-white;
-  border: 2px solid $color-white;
+  border: 2px solid $color-white !important;
   & > i {
     font-weight: bold;
     transform: translateY(7px);

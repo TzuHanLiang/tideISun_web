@@ -1,5 +1,22 @@
 .feature-box {
-    background-color: rgba($color-white, .2);
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+
+      @include respond(tab-port) {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 0rem;
+      }
+      @include respond(phone) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    @include respond(tab-port) {
+        min-height: 0rem;
+      }
+    background-color: rgba($color-white, .1);
     font-size: 1.5rem;
     padding: 2.5rem;
     text-align: center;
