@@ -1,0 +1,39 @@
+.section {
+  max-width: 126rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+  &__about {
+    padding-top: 15rem;
+    background-image: url(../img/second_bg_03.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 15rem;
+  }
+
+  &__business {
+      padding-top: 15rem;
+    &--suntv {
+        padding-bottom: 15rem;
+      border-bottom: 1px solid $color-grey-dark;
+
+      & .leading-text-box {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        padding: 6rem;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-black, 0.4),
+            rgba($color-black, 0.8)
+          ),
+          url(../img/suntv.jpg);
+        & .paragraph--leading {
+          line-height: 2.4;
+        }
+      }
+    }
+    &--financial {
+        padding-bottom: 15rem;
+        border-bottom: 1px solid $color-grey-dark;
+    }
+  }
+}

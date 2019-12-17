@@ -1,51 +1,167 @@
 .header {
-    height: 12vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)),
-    url(../img/hero-small.jpg);
-    background-size: cover;
-    background-position: top;
+  height: 100vh;
+  background-image: url(../img/background_01.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+    background-image: url(../img/background_01.jpg);
+  }
+
+  &__nav-box {
+    z-index: 1000;
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+
+    transition: 0.3s;
+  }
+
+  &__nav {
+    padding-right: 8rem;
+    padding-left: 8rem;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+  }
+
+  &__logo.first-el {
+    min-height: 8rem;
+    min-width: 16.5%;
+    display: inline-block;
     position: relative;
-    
+  }
 
-    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-        height: 95vh;
+  //   &__link {
+  //     position: relative;
+  //   }
+  &__logo-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include absCenter;
+    width: 18rem;
+    opacity: 0;
+    &:last-child {
+      opacity: 1;
     }
+  }
 
-    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
-            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-            only screen and (min-width: 125em) {
-        background-image: linear-gradient(
-            to right bottom,
-            rgba($color-primary-light, 0.8),
-            rgba($color-primary-dark, 0.8)),
-        url(../img/hero.jpg);
-    }
+  &__language-chooser.second-el {
+    flex-grow: 1;
+    text-align: right;
+    text-align: -webkit-right;
+  }
 
-    @include respond(phone) {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  &__language-choices {
+    width: 20rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 0.5s;
+    & > li > a {
+      font-size: 1.7rem;
+      color: $color-grey-light-3;
+      &.active {
+        color: $color-primary-light;
+        &:hover,
+        &:active {
+          color: lighten($color-primary-light, $amount: 10);
+        }
+      }
+      &:hover,
+      &:active {
+        color: lighten($color: $color-grey-light-3, $amount: 10);
+      }
     }
+  }
 
-    &__logo-box {
-        position: absolute;
-        top: 4rem;
-        left: 4rem;
-    }
+  &__navigation.third-el {
+    // transition: 0.5s;
+    min-width: 1.5%;
+    margin-left: 4rem;
+  }
 
-    &__logo {
-        height: 3.5rem;
+  &__nav-background {
+    width: 100%;
+    height: 10rem;
+    position: fixed;
+    top: -10rem;
+    z-index: 10;
+    background-color: $color-white;
+    transition: all 0.5s;
+  }
+
+  .scrolled &__nav-box {
+    padding-top: 1rem;
+  }
+  .scrolled &__nav-background {
+    top: 0;
+  }
+
+  .scrolled &__logo-img {
+    width: 18rem;
+    opacity: 0;
+    &:first-child {
+      opacity: 1;
     }
-    
-    &__text-box {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+  }
+
+  &__text-box {
+    @include absCenter;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &__text {
+    &--main {
+      margin-bottom: 18rem;
     }
+    &--sub {
+      & .col-1-of-3 {
+        text-align: left;
+      }
+      & .heading-primary-2 {
+        line-height: 1;
+        &--main {
+          position: relative;
+          & > span {
+            position: absolute;
+            right: -3rem;
+            bottom: 1rem;
+            font-size: 1.6rem;
+          }
+        }
+        &--sub {
+          font-weight: 300;
+          font-size: 1.7rem;
+        }
+      }
+    }
+    &--animated {
+      position: absolute;
+      top: 0;
+      left: 2.8rem;
+      text-align: right;
+     min-width: 28rem;
+
+      & .heading-primary-1{
+        opacity: 0;
+        animation: moveInAOut 1s ease-out 0s ;
+      }
+    }
+    &--fixed {
+      position: absolute;
+      top: 0;
+      right: 2.8rem;
+    }
+  }
 }

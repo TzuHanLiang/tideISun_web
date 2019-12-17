@@ -1,17 +1,20 @@
 .feature-box {
-    background-color: rgba($color-white, .8);
+    background-color: rgba($color-white, .2);
     font-size: 1.5rem;
     padding: 2.5rem;
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transform .3s;
+    min-height: 34.3rem;
 
     @include respond(tab-port) {
         padding: 2rem;
     }
 
     &__icon {
+        height: 8rem;
+        width: 8rem;
         font-size: 6rem;
         margin-bottom: .5rem;
         display: inline-block;

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+		xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<symbol id="icon-facebook-logo" viewBox="0 0 32 32">
+				<title>facebook-logo</title>
+				<path
+					d="M23.999 0.007l-4.15-0.007c-4.662 0-7.675 3.091-7.675 7.875v3.631h-4.172c-0.361 0-0.652 0.292-0.652 0.653v5.261c0 0.361 0.292 0.652 0.652 0.652h4.172v13.275c0 0.361 0.292 0.653 0.652 0.653h5.444c0.361 0 0.652-0.292 0.652-0.652v-13.275h4.878c0.361 0 0.652-0.292 0.652-0.652l0.002-5.261c0-0.173-0.069-0.339-0.191-0.461s-0.289-0.191-0.462-0.191h-4.88v-3.078c0-1.479 0.353-2.23 2.28-2.23l2.795-0.001c0.36 0 0.652-0.292 0.652-0.652v-4.885c0-0.36-0.292-0.652-0.651-0.652z">
+				</path>
+			</symbol>
+			<symbol id="icon-instagram-logo" viewBox="0 0 32 32">
+				<title>instagram-logo</title>
+				<path
+					d="M23.169 0h-14.338c-4.869 0-8.831 3.962-8.831 8.831v14.338c0 4.869 3.961 8.831 8.831 8.831h14.338c4.87 0 8.831-3.962 8.831-8.831v-14.338c0-4.869-3.961-8.831-8.831-8.831zM29.161 23.169c0 3.304-2.688 5.992-5.992 5.992h-14.338c-3.304 0-5.991-2.688-5.991-5.992v-14.338c0-3.304 2.688-5.992 5.991-5.992h14.338c3.304 0 5.992 2.688 5.992 5.992v14.338z">
+				</path>
+				<path
+					d="M16 7.755c-4.547 0-8.246 3.699-8.246 8.246s3.699 8.245 8.246 8.245 8.246-3.699 8.246-8.245c0-4.547-3.699-8.246-8.246-8.246zM16 21.406c-2.981 0-5.406-2.425-5.406-5.406s2.425-5.406 5.406-5.406 5.406 2.425 5.406 5.406c0 2.981-2.425 5.406-5.406 5.406z">
+				</path>
+				<path
+					d="M24.591 5.347c-0.547 0-1.084 0.221-1.471 0.609-0.388 0.386-0.611 0.924-0.611 1.473 0 0.547 0.223 1.085 0.611 1.473 0.386 0.386 0.924 0.609 1.471 0.609 0.549 0 1.085-0.223 1.473-0.609 0.388-0.388 0.609-0.926 0.609-1.473 0-0.549-0.221-1.086-0.609-1.473-0.386-0.388-0.924-0.609-1.473-0.609z">
+				</path>
+			</symbol>
+			<symbol id="icon-linkedin-letters" viewBox="0 0 32 32">
+				<title>linkedin-letters</title>
+				<path d="M0.396 10.646h6.875v20.646h-6.875v-20.646z"></path>
+				<path
+					d="M29.833 12.532c-1.444-1.576-3.354-2.365-5.729-2.365-0.875 0-1.67 0.108-2.386 0.323s-1.319 0.517-1.812 0.906c-0.493 0.389-0.886 0.75-1.177 1.083-0.277 0.316-0.548 0.685-0.813 1.102v-2.936h-6.854l0.021 1c0.014 0.667 0.021 2.722 0.021 6.167s-0.014 7.937-0.042 13.479h6.854v-11.521c0-0.708 0.076-1.271 0.229-1.688 0.292-0.709 0.732-1.302 1.323-1.781s1.323-0.719 2.198-0.719c1.194 0 2.073 0.413 2.635 1.24s0.844 1.969 0.844 3.427v11.041h6.854v-11.833c-0-3.042-0.722-5.351-2.167-6.927z">
+				</path>
+				<path
+					d="M3.875 0.708c-1.153 0-2.087 0.337-2.802 1.010s-1.073 1.524-1.073 2.552c0 1.014 0.347 1.861 1.042 2.541s1.611 1.021 2.75 1.021h0.042c1.167 0 2.108-0.34 2.823-1.021s1.066-1.528 1.052-2.541c-0.014-1.028-0.368-1.878-1.063-2.552s-1.618-1.010-2.771-1.010z">
+				</path>
+			</symbol>
+			<symbol id="icon-medium" viewBox="0 0 32 32">
+				<title>medium</title>
+				<path
+					d="M10.661 28.432c0 0.927-0.695 1.309-1.464 0.927l-8.304-4.151c-0.251-0.119-0.461-0.317-0.633-0.596s-0.26-0.556-0.26-0.829v-20.303c0-0.757 0.455-1.1 1.483-0.588l9.125 4.56c0.132 0.132 0.035-0.775 0.053 20.98zM11.804 9.339l9.536 15.424-9.536-4.737zM32 9.66v18.772c0 0.297-0.083 0.537-0.251 0.721-0.167 0.184-0.393 0.276-0.679 0.276s-0.565-0.077-0.839-0.232l-7.875-3.919zM31.947 7.523c0 0.036-1.527 2.527-4.58 7.471s-4.843 7.84-5.367 8.683l-6.964-11.292 5.785-9.385c0.315-0.517 0.96-0.608 1.393-0.392l9.661 4.809c0.047 0.023 0.071 0.059 0.071 0.107z">
+				</path>
+			</symbol>
+			<symbol id="icon-telegram" viewBox="0 0 32 32">
+				<title>telegram</title>
+				<path
+					d="M7.7 18.234l3.98 9.949 5.181-5.181 8.884 7.061 6.255-28.125-32 13.329zM22.856 10.007l-9.795 8.934-1.22 4.598-2.254-5.635z">
+				</path>
+			</symbol>
+			<symbol id="icon-twitter" viewBox="0 0 32 32">
+				<title>twitter</title>
+				<path
+					d="M32 6.078c-1.19 0.522-2.458 0.868-3.78 1.036 1.36-0.812 2.398-2.088 2.886-3.626-1.268 0.756-2.668 1.29-4.16 1.588-1.204-1.282-2.92-2.076-4.792-2.076-3.632 0-6.556 2.948-6.556 6.562 0 0.52 0.044 1.020 0.152 1.496-5.454-0.266-10.28-2.88-13.522-6.862-0.566 0.982-0.898 2.106-0.898 3.316 0 2.272 1.17 4.286 2.914 5.452-1.054-0.020-2.088-0.326-2.964-0.808 0 0.020 0 0.046 0 0.072 0 3.188 2.274 5.836 5.256 6.446-0.534 0.146-1.116 0.216-1.72 0.216-0.42 0-0.844-0.024-1.242-0.112 0.85 2.598 3.262 4.508 6.13 4.57-2.232 1.746-5.066 2.798-8.134 2.798-0.538 0-1.054-0.024-1.57-0.090 2.906 1.874 6.35 2.944 10.064 2.944 12.072 0 18.672-10 18.672-18.668 0-0.29-0.010-0.57-0.024-0.848 1.302-0.924 2.396-2.078 3.288-3.406z">
+				</path>
+			</symbol>
+			<symbol id="icon-youtube" viewBox="0 0 32 32">
+				<title>youtube</title>
+				<path
+					d="M0.99 10.1v11.151c0 2.679 2.172 4.851 4.851 4.851h20.297c2.679 0 4.852-2.172 4.852-4.851v-11.151c0-2.679-2.172-4.851-4.852-4.851h-20.297c-2.679 0-4.851 2.172-4.851 4.851zM12.327 21.703v-12.054l9.139 6.027z">
+				</path>
+			</symbol>
+		</defs>
+		<svg class="icon icon-facebook-logo">
+			<use xlink:href="#icon-facebook-logo"></use>
+		</svg>
+	</svg>
+    <title>icon</title>
+</head>
+<body>
+    <div class="btn btn-social">
+		<svg class="btn-social--icon icon-facebook-logo">
+			<use xlink:href="#icon-facebook-logo"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--facebook">
+		<svg class="btn-social--icon icon-facebook-logo">
+			<use xlink:href="#icon-facebook-logo"></use>
+		</svg>
+	</div>
+
+	<div class="btn btn-social btn-social--medium">
+		<svg class="btn-social--icon icon-medium">
+			<use xlink:href="#icon-medium"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--twitter">
+		<svg class="btn-social--icon icon-twitter">
+			<use xlink:href="#icon-twitter"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--instagram">
+		<svg class="btn-social--icon icon-instagram-logo">
+			<use xlink:href="#icon-instagram-logo"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--telegram">
+		<svg class="btn-social--icon icon-telegram">
+			<use xlink:href="#icon-telegram"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--youtube">
+		<svg class="btn-social--icon icon-youtube">
+			<use xlink:href="#icon-youtube"></use>
+		</svg>
+	</div>
+	<div class="btn btn-social btn-social--linkedin">
+		<svg class="btn-social--icon icon-linkedin-letters">
+			<use xlink:href="#icon-linkedin-letters"></use>
+		</svg>
+	</div>
+
+</body>
+</html>
