@@ -496,11 +496,13 @@ body {
     @media only screen and (max-width: 37.5em) {
       .section-contactus .grid-box--3 {
         grid-template-columns: repeat(2, 1fr); } }
-  .social .grid-box--3 {
+  .social .grid-box--3,
+  .recruiting .grid-box--3 {
     justify-items: center;
     grid-row-gap: 10rem; }
     @media only screen and (max-width: 37.5em) {
-      .social .grid-box--3 {
+      .social .grid-box--3,
+      .recruiting .grid-box--3 {
         grid-template-columns: repeat(1, 1fr);
         grid-row-gap: 3rem; } }
   header .grid-box--3 {
@@ -604,7 +606,7 @@ body {
   .header__sub--social {
     background-image: url(../img/header_social.jpg); }
   .header__sub--recruiting {
-    background-image: url(../img/header_recruiting.jpg); }
+    background-image: url(../img/recruiting/header_recruiting.jpg); }
   .header__sub--contact {
     background-image: url(../img/header_contact.jpg); }
 
@@ -923,7 +925,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat; }
   .section-footer {
-    height: 100vh;
+    height: 70vh;
     width: 100vw; }
   .section__business > * {
     padding: 15rem 3rem; }
@@ -1014,6 +1016,9 @@ body {
 .social {
   background-color: #fff;
   padding: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    .social {
+      padding: 5rem; } }
   @media only screen and (max-width: 37.5em) {
     .social {
       padding: 3rem; } }
@@ -1027,3 +1032,35 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+
+.recruiting {
+  background-color: #fff;
+  padding: 8rem;
+  color: #666; }
+  @media only screen and (max-width: 56.25em) {
+    .recruiting {
+      padding: 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .recruiting {
+      padding: 3rem; } }
+  .recruiting__img-box {
+    width: 100%;
+    margin-top: 2rem; }
+  .recruiting__img {
+    width: 100%; }
+  .recruiting__title {
+    color: #000;
+    font-size: 2.4rem; }
+  .recruiting__paragraph {
+    font-size: 1.6rem; }
+
+.contact {
+  background-color: #fff;
+  padding: 8rem;
+  color: #666; }
+  @media only screen and (max-width: 56.25em) {
+    .contact {
+      padding: 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .contact {
+      padding: 3rem; } }

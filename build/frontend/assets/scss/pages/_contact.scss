@@ -1,0 +1,12 @@
+.contact {
+  background-color: $color-white;
+  padding: 8rem;
+  @include respond(tab-port) {
+    padding: 5rem;
+  }
+
+  @include respond(phone) {
+    padding: 3rem;
+  }
+  color: $color-grey-dark;
+}
