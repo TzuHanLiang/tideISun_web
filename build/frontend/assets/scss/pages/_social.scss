@@ -1,0 +1,17 @@
+.social{
+    background-color: $color-white;
+    padding: 8rem;
+    @include respond(phone) {
+        padding: 3rem;
+      }
+    &__icon{
+        margin-bottom: 4rem;
+        height: 5.1rem;
+        width: 100%;
+        position: relative;
+    }
+    &__icon-img{
+       @include absCenter;
+       
+    }
+}

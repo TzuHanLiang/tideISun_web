@@ -1,14 +1,65 @@
 .header {
-  height: 100vh;
-  background-image: url(../img/background_01.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-
+  &__main {
+    height: 100vh;
+    background-image: url(../img/background_01.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+  }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
     only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     only screen and (min-width: 125em) {
     background-image: url(../img/background_01.jpg);
+  }
+
+  &__sub{
+    width: 100VW;
+    background-size: cover;
+    background-position: top;
+    padding: 17rem 10rem 5rem;
+    @include respond(tab-land) {
+      padding: 17rem 8rem 5rem;
+    }
+    @include respond(tab-port) {
+      padding: 16rem 5rem 5rem;
+    }
+    @include respond(phone) {
+      padding: 15rem 1.5rem 5rem;
+    }
+    &--about{
+      background-image: url(../img/header_about.jpg);
+    }
+    &--founder{
+      background-image: url(../img/header_founder.jpg);
+    }
+    &--social{
+      background-image: url(../img/header_social.jpg);
+    }
+    &--recruiting{
+      background-image: url(../img/header_recruiting.jpg);
+    }
+    &--contact{
+      background-image: url(../img/header_contact.jpg);
+    }
+  }
+
+  &__sub-text{
+    font-family: 'Work Sans", sans-serif';
+    &--main{
+      font-size: 7.2rem;
+      font-weight: 700;
+      line-height: 1;
+      @include respond(phone) {
+        font-size: 6rem;
+      }
+    }
+    &--sub{
+      font-size: 2.8rem;
+      font-weight: 300;
+      @include respond(phone) {
+        font-size: 2.4rem;
+      }
+    }
   }
 
   &__nav-box {
@@ -16,7 +67,7 @@
     position: fixed;
     top: 0rem;
     left: 0rem;
-    width: 100%;
+    width: 100vw;
     padding-top: 3rem;
     padding-bottom: 1.5rem;
 
@@ -94,12 +145,14 @@
   }
 
   &__nav-background {
-    width: 100%;
+    width: 100vw;
     height: 10rem;
     position: fixed;
     top: -10rem;
+    left: 0;
     z-index: 10;
     background-color: $color-white;
+    border-bottom: 1px solid $color-grey-light-2;
     transition: all 0.5s;
   }
 
@@ -134,22 +187,17 @@
       text-align: left;
     }
     &--animated {
-      
       text-align: right;
-  
 
-      & .heading-primary-1{
+      & .heading-primary-1 {
         opacity: 0;
-        animation: moveInAOut 1s ease-out 0s ;
+        animation: moveInAOut 1s ease-out 0s;
       }
-    }
-    &--fixed {
-      
     }
     &--sub {
       margin-top: 12rem;
       text-align: left;
-   
+
       & .heading-primary-2 {
         line-height: 1;
         &--main {

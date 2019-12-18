@@ -1,0 +1,30 @@
+.milestones{
+    &__title{
+        padding: 8rem 10rem;
+        font-size: 6rem;
+        font-weight: 700;
+        background-image: url(../img/header_contact.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    &__list{
+        margin: 2rem 10rem;
+
+    }
+    &__item{
+        // background-color: pink;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        border-bottom: 1px solid $color-grey-light-2;
+        color: $color-grey-dark;
+        font-size: 2rem;
+        text-align: left;
+    }
+    &__date{
+       font-weight: 500;
+    }
+    &__event{
+        // background-color: salmon;
+    }
+}
