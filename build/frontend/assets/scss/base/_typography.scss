@@ -1,4 +1,3 @@
-
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -26,9 +25,14 @@ body {
   }
   &-2 {
     color: $color-white;
-    font-weight: 400;
+    font-weight: 300;
+
     &--main {
       font-size: 5.3rem;
+      // &:not(:last-child) {
+      //   padding-right: 3rem;
+      //   border-right: 1px solid $color-white;
+      // }
       @include respond(phone) {
         font-size: 4.5rem;
       }
@@ -59,7 +63,7 @@ body {
 .heading-tertiary {
   font-size: 3.6rem;
   font-weight: 700;
-  color:$color-primary-light;
+  color: $color-primary-light;
   text-transform: uppercase;
   @include respond(tab-port) {
     font-size: 3.06rem; //0.85
@@ -70,34 +74,34 @@ body {
   }
 }
 
-.heading-quaternary{
-    font-size: 2.4rem;
-    @include respond(tab-port) {
-        font-size: 2rem; //0.85
-      }
-    
-      @include respond(phone) {
-        font-size: 2rem; 
-      }
+.heading-quaternary {
+  font-size: 2.4rem;
+  @include respond(tab-port) {
+    font-size: 2rem; //0.85
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
 }
 
 .heading-quinary {
   font-size: 1.8rem;
-//   text-transform: uppercase;
+  //   text-transform: uppercase;
   &--sub {
     color: $color-primary-dark;
     font-size: 1.1rem;
   }
 }
 
-.caption-primary{
-    color:$color-grey-dark-2;
-    text-transform: uppercase;
-    font-size: $default-font-size;
-    font-weight: 400;
-    &>span>a{
-        color:$color-primary-light;
-    }
+.caption-primary {
+  color: $color-grey-dark-2;
+  text-transform: uppercase;
+  font-size: $default-font-size;
+  font-weight: 400;
+  & > span > a {
+    color: $color-primary-light;
+  }
 }
 
 .paragraph {
@@ -107,6 +111,6 @@ body {
   }
 }
 
-.icon{
-    fill: $color-white;
+.icon {
+  fill: $color-white;
 }

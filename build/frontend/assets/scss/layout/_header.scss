@@ -57,6 +57,9 @@
     flex-grow: 1;
     text-align: right;
     text-align: -webkit-right;
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__language-choices {
@@ -122,10 +125,29 @@
   }
 
   &__text {
+    position: relative;
     &--main {
-      margin-bottom: 18rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      text-align: left;
+    }
+    &--animated {
+      
+      text-align: right;
+  
+
+      & .heading-primary-1{
+        opacity: 0;
+        animation: moveInAOut 1s ease-out 0s ;
+      }
+    }
+    &--fixed {
+      
     }
     &--sub {
+      margin-top: 12rem;
       & .col-1-of-3 {
         text-align: left;
       }
@@ -145,23 +167,6 @@
           font-size: 1.7rem;
         }
       }
-    }
-    &--animated {
-      position: absolute;
-      top: 0;
-      left: 2.8rem;
-      text-align: right;
-     min-width: 28rem;
-
-      & .heading-primary-1{
-        opacity: 0;
-        animation: moveInAOut 1s ease-out 0s ;
-      }
-    }
-    &--fixed {
-      position: absolute;
-      top: 0;
-      right: 2.8rem;
     }
   }
 }

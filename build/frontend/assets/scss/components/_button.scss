@@ -43,6 +43,10 @@
     font-weight: bold;
     transform: translateY(7px);
   }
+  &:hover.btn {
+    background-color: $color-white;
+    color: $color-grey-dark-3;
+  }
 }
 
 .btn-social {
@@ -119,5 +123,5 @@
   height: 3.5rem;
   border-bottom: 2px solid $color-white;
   border-left: 2px solid $color-white;
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) translateX(-2.47rem);
 }

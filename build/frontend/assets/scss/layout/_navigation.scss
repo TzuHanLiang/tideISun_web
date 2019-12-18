@@ -6,6 +6,8 @@
   top: 0;
   left: 0;
   pointer-events: none;
+  background-color: rgba($color-black, 0.5);
+  opacity: 0;
 
   transition: all 0.5s;
   &__modal {
@@ -13,14 +15,13 @@
     pointer-events: none;
     top: 0;
     left: 0;
-    width: 100vw;
+    width:  calc(100vw / 3*2);
     height: 100vh;
-    background-color: rgba($color-black, 0.5);
-    opacity: 0;
+
   }
 
   &__nav {
-    flex-grow: 1;
+    pointer-events: stroke;
     background-color: $color-white;
     position: absolute;
     top: 0;
@@ -29,6 +30,9 @@
     height: 100vh;
     // transform: translateX(calc(100vw / 3));
     transition: all 0.5s;
+    @include respond(phone) {
+      width: calc(100vw / 2);
+    }
   }
 
   &__list {
@@ -87,11 +91,14 @@
 
   //FUNCTIONALITY
 
-  &__checkbox:checked ~ & > &__modal {
+  &__checkbox:checked ~ &  {
     opacity: 1;
   }
   &__checkbox:checked ~ & > &__modal + &__nav {
     left: calc(2 * 100vw / 3);
+    @include respond(phone) {
+      left: calc(100vw / 2);
+    }
   }
 
   &__button {
@@ -103,8 +110,14 @@
     height: 3rem;
     width: 3rem;
     transition: all 0.3s;
+    @include respond(phone) {
+      right: 3.5rem;
+    }
     &.scrolled {
       top: 3.5rem;
+      @include respond(phone) {
+        right: 3.5rem;
+      }
       & > .navigation__icon {
         &,
         &::before,

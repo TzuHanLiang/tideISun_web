@@ -1,31 +1,55 @@
 .section {
-  max-width: 126rem;
-  margin: 0 auto;
-  padding: 0 3rem;
-  @include respond(tab-land) {
-    padding: 0 10rem;
-  }
-  @include respond(phone) {
+  &__container{
+    max-width: 126rem;
+    margin: 0 auto;
     padding: 0 3rem;
+    
+    &:not(:first-child){
+      border-bottom: 1px solid $color-grey-dark;
+    }
+    @include respond(tab-land) {
+      padding: 0 10rem;
+    }
+    @include respond(phone) {
+      padding: 0 3rem;
+    }
   }
   &-about {
-    padding-top: 15rem;
+    padding-top: 12rem;
     background-image: url(../img/second_bg_03.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     padding-bottom: 15rem;
   }
-  &-business {
-    @include respond(tab-land) {
+  
+  &-news {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+  &-contactus {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    &__background {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      z-index: -1;
     }
   }
 
   &__business {
-    padding-top: 15rem;
-    &--suntv {
-      padding-bottom: 15rem;
-      border-bottom: 1px solid $color-grey-dark;
+  & > * {
+    padding: 15rem 3rem;
 
+    @include respond(tab-land) {
+      padding: 10rem 10rem;
+    }
+    @include respond(phone) {
+      padding: 10rem 3rem;
+    }
+  }
+    &--suntv {
       & .leading-text-box {
         margin-top: 2rem;
         margin-bottom: 3rem;
@@ -42,17 +66,20 @@
       }
     }
     &--financial {
-      padding-bottom: 15rem;
-      border-bottom: 1px solid $color-grey-dark;
+    
     }
     &--technology {
-      padding-bottom: 15rem;
-      border-bottom: 1px solid $color-grey-dark;
+     
       & .leading-text-box {
         margin: 3rem auto;
         padding: 6rem;
         position: relative;
         overflow: hidden;
+
+        & .logo {
+          @include respond(phone) {
+          }
+        }
 
         &--background {
           width: 100%;
@@ -62,11 +89,42 @@
           transform: scale(2);
           pointer-events: none;
           z-index: -1;
+          @include respond(phone) {
+            transform: scale(6);
+            bottom: 100%;
+          }
         }
 
         & .paragraph--leading {
           line-height: 2.4;
         }
+      }
+    }
+    &--investment {
+      position: relative;
+    
+      background-image: url(../img/third_bg_03.jpg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      & .leading-text-box {
+        background-image: linear-gradient(
+            to bottom,
+            rgba($color-black, 0.6),
+            rgba($color-black, 0.6)
+          ),
+          url(../img/investment.jpg);
+        background-position: center;
+        background-size: cover;
+        margin: 5rem 0 8rem;
+      }
+      & .leading-text {
+        padding: 8rem;
+      }
+
+      & .btn-outline {
+        float: right;
       }
     }
   }
