@@ -53,8 +53,13 @@
       @include absCenter;
       width: 50%;
       list-style: none;
-      display: flex;
-      justify-content: space-evenly;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: .5rem;
+      grid-row-gap: .2rem;
+      @include respond(phone) {
+        grid-template-columns: repeat(1, 1fr);
+      }
 
       & > li > a {
         color: $color-grey-dark-2;

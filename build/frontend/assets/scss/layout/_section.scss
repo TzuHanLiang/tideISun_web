@@ -1,4 +1,5 @@
 .section {
+  background-color: $color-black;
   &__container{
     max-width: 126rem;
     margin: 0 auto;
@@ -30,14 +31,16 @@
   &-contactus {
     padding-top: 15rem;
     padding-bottom: 15rem;
-    &__background {
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      z-index: -1;
-    }
+    background-image: url(../img/forth_bg_02.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
   }
-
+  &-footer{
+    height: 100vh;
+    width: 100vw;
+  }
   &__business {
   & > * {
     padding: 15rem 3rem;
