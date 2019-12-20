@@ -4,7 +4,6 @@
     max-width: 126rem;
     margin: 0 auto;
     padding: 0 3rem;
-    
     &:not(:first-child){
       border-bottom: 1px solid $color-grey-dark;
     }
@@ -40,7 +39,10 @@
   &-footer{
     height: 70vh;
     width: 100vw;
+    z-index: -1;
   }
+ 
+
   &__business {
   & > * {
     padding: 15rem 3rem;

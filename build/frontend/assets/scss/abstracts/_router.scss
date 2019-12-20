@@ -1,0 +1,28 @@
+.router {
+  &.router--main .header__main,
+  &.router--about .header__sub--about,
+  &.router--founder .header__sub--founder,
+  &.router--social .header__sub--social,
+  &.router--recruiting .header__sub--recruiting,
+  &.router--contact .header__sub--contact {
+    display: block;
+  }
+
+  &.router--main main > .home,
+  &.router--about main > .about,
+  &.router--founder main > .founder,
+  &.router--social main > .social,
+  &.router--recruiting main > .recruiting,
+  &.router--contact main > .contact {
+    display: block;
+  }
+
+  main > .home,
+  main > .about,
+  main > .founder,
+  main > .social,
+  main > .recruiting,
+  main > .contact {
+    display: none;
+  }
+}

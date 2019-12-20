@@ -1,5 +1,8 @@
 .header {
+  z-index: 100;
+
   &__main {
+    display: none;
     height: 100vh;
     background-image: url(../img/background_01.jpg);
     background-size: cover;
@@ -12,11 +15,12 @@
     background-image: url(../img/background_01.jpg);
   }
 
-  &__sub{
-    width: 100VW;
+  &__sub {
+    width: 100vw;
     background-size: cover;
     background-position: top;
     padding: 17rem 10rem 5rem;
+
     @include respond(tab-land) {
       padding: 17rem 8rem 5rem;
     }
@@ -26,26 +30,41 @@
     @include respond(phone) {
       padding: 15rem 1.5rem 5rem;
     }
-    &--about{
+
+    // &--about,
+    // &--founder,
+    // &--social,
+    // &--recruiting,
+    // &--contact {
+    //   display: none;
+    // }
+    &--about {
+      display: none;
       background-image: url(../img/header_about.jpg);
     }
-    &--founder{
+    &--founder {
+      display: none;
       background-image: url(../img/header_founder.jpg);
     }
-    &--social{
+    &--social {
+      display: none;
       background-image: url(../img/header_social.jpg);
     }
-    &--recruiting{
+    &--recruiting {
+      display: none;
       background-image: url(../img/recruiting/header_recruiting.jpg);
     }
-    &--contact{
+    &--contact {
+      display: none;
       background-image: url(../img/header_contact.jpg);
     }
   }
 
-  &__sub-text{
+  &__sub-text {
+    max-width: 120rem;
+    margin: 0 auto;
     font-family: 'Work Sans", sans-serif';
-    &--main{
+    &--main {
       font-size: 7.2rem;
       font-weight: 700;
       line-height: 1;
@@ -53,7 +72,7 @@
         font-size: 6rem;
       }
     }
-    &--sub{
+    &--sub {
       font-size: 2.8rem;
       font-weight: 300;
       @include respond(phone) {

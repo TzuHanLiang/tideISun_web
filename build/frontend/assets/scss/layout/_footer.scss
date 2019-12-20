@@ -4,6 +4,7 @@
    left: 0;
    width: 100vw;
    z-index: -1;
+   text-align: center;
 
     padding: 12rem 6rem;
     background-color: $color-grey-light-2;
@@ -32,6 +33,7 @@
     & .btn-social:not(:first-child){
         margin-right: 1rem;
     }
+
 }
 
 
