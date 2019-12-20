@@ -24,7 +24,7 @@ const handleHeaderTextAnimation = () => {
 };
 window.onload = () => {
   handleHeaderTextAnimation();
-  els.router.className = "router router--main";
+  router.route(window.location.hash);
   // console.log(window.);
 };
 
@@ -129,6 +129,7 @@ const Router = function() {};
 
 Router.prototype.route = async hash => {
   console.trace(hash);
+  window.scrollY = 0;
   switch (true) {
     case hash.startsWith("#about"):
       els.router.className = "router router--about";
