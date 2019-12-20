@@ -39,7 +39,8 @@
   &-footer{
     height: 70vh;
     width: 100vw;
-    z-index: -1;
+    position: relative;
+    pointer-events: none;
   }
  
 

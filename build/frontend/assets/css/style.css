@@ -1023,7 +1023,8 @@ body {
   .section-footer {
     height: 70vh;
     width: 100vw;
-    z-index: -1; }
+    position: relative;
+    pointer-events: none; }
   .section__business > * {
     padding: 15rem 3rem; }
     @media only screen and (max-width: 75em) {
