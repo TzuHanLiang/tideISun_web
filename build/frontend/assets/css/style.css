@@ -554,28 +554,32 @@ body {
 
 .tab__view.suntv .tab__link[data-type="suntv"] {
   background-color: #fff;
-  color: #595959; }
+  color: #595959;
+  transform: translateY(0px); }
 
 .tab__view.suntv .tab__content#section__business--suntv {
   display: block; }
 
 .tab__view.financial .tab__link[data-type="financial"] {
   background-color: #fff;
-  color: #595959; }
+  color: #595959;
+  transform: translateY(0px); }
 
 .tab__view.financial .tab__content#section__business--financial {
   display: block; }
 
 .tab__view.technology .tab__link[data-type="technology"] {
   background-color: #fff;
-  color: #595959; }
+  color: #595959;
+  transform: translateY(0px); }
 
 .tab__view.technology .tab__content#section__business--technology {
   display: block; }
 
 .tab__view.investment .tab__link[data-type="investment"] {
   background-color: #fff;
-  color: #595959; }
+  color: #595959;
+  transform: translateY(0px); }
 
 .tab__view.investment .tab__content#section__business--investment {
   display: block; }
@@ -598,12 +602,19 @@ body {
   border-radius: 4.6rem;
   border: 2px solid #fff;
   transition: all 0.2s;
+  cursor: pointer;
   display: none; }
   @media only screen and (max-width: 56.25em) {
     .tab__link {
       display: inline-block; } }
   .tab__link:not(:last-child) {
     margin-right: 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .tab__link {
+      font-size: 1.6rem;
+      padding: 5px 1rem; }
+      .tab__link:not(:last-child) {
+        margin-right: 1rem; } }
   .tab__link:hover {
     background-color: #fff;
     color: #595959;

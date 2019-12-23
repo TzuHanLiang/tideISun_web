@@ -46,15 +46,15 @@ els.navigation.addEventListener(
   false
 );
 
-window.onscroll = () => {
-  if (Math.round(window.scrollY) > 30) {
+window.onscroll = evt => {
+  if (Math.round(window.pageYOffset) > 30) {
     els.navigationButton.classList.add("scrolled");
     els.header.classList.add("scrolled");
   } else {
     els.navigationButton.classList.remove("scrolled");
     els.header.classList.remove("scrolled");
   }
-  console.log(window.scrollY);
+  console.log(window.pageYOffset);
 };
 
 const to = promise => {
