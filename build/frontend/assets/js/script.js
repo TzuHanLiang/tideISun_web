@@ -1,5 +1,6 @@
 const els = {
   navigationButton: document.querySelector(".navigation__button"),
+  navigation: document.querySelector(".navigation"),
   navigationModal: document.querySelector(".navigation__modal"),
   navigationCheckbox: document.querySelector(".navigation__checkbox"),
   header: document.querySelector(".header"),
@@ -37,7 +38,7 @@ els.navigationCheckbox.addEventListener(
   },
   false
 );
-els.navigationModal.addEventListener(
+els.navigation.addEventListener(
   "click",
   _ => {
     els.navigationCheckbox.checked = false;
