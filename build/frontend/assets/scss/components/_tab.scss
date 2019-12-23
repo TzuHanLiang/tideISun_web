@@ -1,0 +1,81 @@
+.tab {
+  &__view.suntv {
+    .tab__link[data-type="suntv"] {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+    }
+    .tab__content#section__business--suntv {
+      display: block;
+    }
+  }
+  &__view.financial {
+    .tab__link[data-type="financial"] {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+    }
+    .tab__content#section__business--financial {
+      display: block;
+    }
+  }
+  &__view.technology {
+    .tab__link[data-type="technology"] {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+    }
+    .tab__content#section__business--technology {
+      display: block;
+    }
+  }
+  &__view.investment {
+    .tab__link[data-type="investment"] {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+    }
+    .tab__content#section__business--investment {
+      display: block;
+    }
+  }
+  &__view.suntv {
+    .tab__link[data-type="suntv"] {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+    }
+    .tab__content#section__business--suntv {
+      display: block;
+    }
+  }
+  &__view .heading-quaternary{
+    @include respond(tab-port) {
+        display: none;
+      }
+  }
+  &__link {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-radius: 4.6rem;
+    border: 2px solid $color-white;
+    transition: all 0.2s;
+
+    display: none;
+    @include respond(tab-port) {
+      display: inline-block;
+    }
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+    &:hover {
+      background-color: $color-white;
+      color: $color-grey-dark-3;
+      transform: translateY(-3px);
+    }
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  &__content {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}

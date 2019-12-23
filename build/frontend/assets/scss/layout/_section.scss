@@ -38,14 +38,15 @@
   }
 
   &__business {
+
   & > * {
     padding: 15rem 3rem;
 
     @include respond(tab-land) {
-      padding: 10rem 10rem;
+      padding: 4rem 10rem;
     }
     @include respond(phone) {
-      padding: 10rem 3rem;
+      padding: 4rem 3rem;
     }
   }
     &--suntv {

@@ -5,12 +5,13 @@ const els = {
   navigationCheckbox: document.querySelector(".navigation__checkbox"),
   header: document.querySelector(".header"),
   router: document.querySelector(".router"),
-  footer:document.querySelector("footer.footer"),
+  tabView: document.querySelector(".tab__view"),
+  footer: document.querySelector("footer.footer"),
   headerTextAnimated: document.querySelector(".header__text--animated"),
   inputEmail: document.querySelector(".contact input[type='email']"),
   inputSubject: document.querySelector(".contact input[type='text']"),
   inputMessage: document.querySelector(".contact #message"),
-  sendButton: document.querySelector(".form > .btn-outline"),
+  sendButton: document.querySelector(".form > .btn-outline")
 };
 const headerTextList = ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"];
 let animateHeaderTextInterval;
@@ -26,7 +27,6 @@ const handleHeaderTextAnimation = () => {
 window.onload = () => {
   handleHeaderTextAnimation();
   router.route(window.location.hash);
-
 };
 
 els.navigationCheckbox.addEventListener(
@@ -161,3 +161,27 @@ window.addEventListener(
   },
   false
 );
+
+const handelTabView = evt => {
+  if (evt.target.matches("[data-type='suntv']")) {
+    console.log(evt.target.dataset.type);
+    els.tabView.className = `tab__view ${evt.target.dataset.type}`;
+  }
+  if (evt.target.matches("[data-type='financial']")) {
+    console.log(evt.target.dataset.type);
+    els.tabView.className = `tab__view ${evt.target.dataset.type}`;
+
+  }
+  if (evt.target.matches("[data-type='technology']")) {
+    console.log(evt.target.dataset.type);
+    els.tabView.className = `tab__view ${evt.target.dataset.type}`;
+
+  }
+  if (evt.target.matches("[data-type='investment']")) {
+    console.log(evt.target.dataset.type);
+    els.tabView.className = `tab__view ${evt.target.dataset.type}`;
+
+  }
+};
+
+els.tabView.addEventListener("click", handelTabView, false);

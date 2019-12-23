@@ -552,6 +552,69 @@ body {
 .milestones__date {
   font-weight: 500; }
 
+.tab__view.suntv .tab__link[data-type="suntv"] {
+  background-color: #fff;
+  color: #595959; }
+
+.tab__view.suntv .tab__content#section__business--suntv {
+  display: block; }
+
+.tab__view.financial .tab__link[data-type="financial"] {
+  background-color: #fff;
+  color: #595959; }
+
+.tab__view.financial .tab__content#section__business--financial {
+  display: block; }
+
+.tab__view.technology .tab__link[data-type="technology"] {
+  background-color: #fff;
+  color: #595959; }
+
+.tab__view.technology .tab__content#section__business--technology {
+  display: block; }
+
+.tab__view.investment .tab__link[data-type="investment"] {
+  background-color: #fff;
+  color: #595959; }
+
+.tab__view.investment .tab__content#section__business--investment {
+  display: block; }
+
+.tab__view.suntv .tab__link[data-type="suntv"] {
+  background-color: #fff;
+  color: #595959; }
+
+.tab__view.suntv .tab__content#section__business--suntv {
+  display: block; }
+
+@media only screen and (max-width: 56.25em) {
+  .tab__view .heading-quaternary {
+    display: none; } }
+
+.tab__link {
+  margin-top: 4rem;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 4.6rem;
+  border: 2px solid #fff;
+  transition: all 0.2s;
+  display: none; }
+  @media only screen and (max-width: 56.25em) {
+    .tab__link {
+      display: inline-block; } }
+  .tab__link:not(:last-child) {
+    margin-right: 3rem; }
+  .tab__link:hover {
+    background-color: #fff;
+    color: #595959;
+    transform: translateY(-3px); }
+  .tab__link:active {
+    transform: translateY(-1px); }
+
+@media only screen and (max-width: 56.25em) {
+  .tab__content {
+    display: none; } }
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -1041,10 +1104,10 @@ body {
     padding: 15rem 3rem; }
     @media only screen and (max-width: 75em) {
       .section__business > * {
-        padding: 10rem 10rem; } }
+        padding: 4rem 10rem; } }
     @media only screen and (max-width: 37.5em) {
       .section__business > * {
-        padding: 10rem 3rem; } }
+        padding: 4rem 3rem; } }
   .section__business--suntv .leading-text-box {
     margin-top: 2rem;
     margin-bottom: 3rem;
