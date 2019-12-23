@@ -4,12 +4,12 @@ const els = {
   navigationCheckbox: document.querySelector(".navigation__checkbox"),
   header: document.querySelector(".header"),
   router: document.querySelector(".router"),
+  footer:document.querySelector("footer.footer"),
   headerTextAnimated: document.querySelector(".header__text--animated"),
   inputEmail: document.querySelector(".contact input[type='email']"),
   inputSubject: document.querySelector(".contact input[type='text']"),
   inputMessage: document.querySelector(".contact #message"),
   sendButton: document.querySelector(".form > .btn-outline"),
-  
 };
 const headerTextList = ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"];
 let animateHeaderTextInterval;
@@ -25,7 +25,7 @@ const handleHeaderTextAnimation = () => {
 window.onload = () => {
   handleHeaderTextAnimation();
   router.route(window.location.hash);
-  // console.log(window.);
+
 };
 
 els.navigationCheckbox.addEventListener(

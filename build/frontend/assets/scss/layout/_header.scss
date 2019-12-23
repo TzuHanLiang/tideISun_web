@@ -194,6 +194,13 @@
     @include absCenter;
     transform: translate(-50%, -50%);
     text-align: center;
+    min-width: 55rem;
+   @include respond(tab-land){
+     min-width: 50rem;
+   }
+   @include respond(phone){
+    min-width: 42rem;
+  }
   }
 
   &__text {

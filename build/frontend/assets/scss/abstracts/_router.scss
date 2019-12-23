@@ -1,4 +1,6 @@
 .router {
+  z-index: 1000;
+  position: relative;
   &.router--main .header__main,
   &.router--about .header__sub--about,
   &.router--founder .header__sub--founder,

@@ -15,29 +15,30 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
-.router.router--main .header__main,
-.router.router--about .header__sub--about,
-.router.router--founder .header__sub--founder,
-.router.router--social .header__sub--social,
-.router.router--recruiting .header__sub--recruiting,
-.router.router--contact .header__sub--contact {
-  display: block; }
-
-.router.router--main main > .home,
-.router.router--about main > .about,
-.router.router--founder main > .founder,
-.router.router--social main > .social,
-.router.router--recruiting main > .recruiting,
-.router.router--contact main > .contact {
-  display: block; }
-
-.router main > .home,
-.router main > .about,
-.router main > .founder,
-.router main > .social,
-.router main > .recruiting,
-.router main > .contact {
-  display: none; }
+.router {
+  z-index: 1000;
+  position: relative; }
+  .router.router--main .header__main,
+  .router.router--about .header__sub--about,
+  .router.router--founder .header__sub--founder,
+  .router.router--social .header__sub--social,
+  .router.router--recruiting .header__sub--recruiting,
+  .router.router--contact .header__sub--contact {
+    display: block; }
+  .router.router--main main > .home,
+  .router.router--about main > .about,
+  .router.router--founder main > .founder,
+  .router.router--social main > .social,
+  .router.router--recruiting main > .recruiting,
+  .router.router--contact main > .contact {
+    display: block; }
+  .router main > .home,
+  .router main > .about,
+  .router main > .founder,
+  .router main > .social,
+  .router main > .recruiting,
+  .router main > .contact {
+    display: none; }
 
 @keyframes moveInLeft {
   0% {
@@ -110,10 +111,6 @@ body {
 a {
   text-decoration: none;
   color: #fff; }
-
-main {
-  position: relative;
-  z-index: 20; }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -560,8 +557,8 @@ body {
   bottom: 0;
   left: 0;
   width: 100vw;
-  z-index: -1;
   text-align: center;
+  z-index: 1;
   padding: 12rem 6rem;
   background-color: #f5f5f5; }
   @media only screen and (max-width: 37.5em) {
@@ -583,6 +580,16 @@ body {
     color: #666; }
   .footer .btn-social:not(:first-child) {
     margin-right: 1rem; }
+  .footer__block {
+    height: 65vh;
+    width: 100vw;
+    z-index: -1; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__block {
+        height: 55vh; } }
+    @media only screen and (max-width: 56.25em) {
+      .footer__block {
+        height: 48vh; } }
 
 .grid-box--3 {
   display: grid;
@@ -818,7 +825,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center; }
+    text-align: center;
+    min-width: 55rem; }
+    @media only screen and (max-width: 75em) {
+      .header__text-box {
+        min-width: 50rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .header__text-box {
+        min-width: 42rem; } }
   .header__text {
     position: relative; }
     .header__text--main {
@@ -936,6 +950,9 @@ body {
     height: 3rem;
     width: 3rem;
     transition: all 0.3s; }
+    @media only screen and (max-width: 56.25em) {
+      .navigation__button {
+        right: 6.5rem; } }
     @media only screen and (max-width: 37.5em) {
       .navigation__button {
         right: 3.5rem; } }
@@ -1020,11 +1037,6 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; }
-  .section-footer {
-    height: 70vh;
-    width: 100vw;
-    position: relative;
-    pointer-events: none; }
   .section__business > * {
     padding: 15rem 3rem; }
     @media only screen and (max-width: 75em) {
@@ -1076,10 +1088,11 @@ body {
       float: right; }
 
 .about {
-  background-color: #fff; }
+  background-color: #fff;
+  width: 100%; }
   .about__img-box {
-    padding: 3rem 0;
-    width: 100%; }
+    width: 100%;
+    padding: 3rem 0; }
   .about__img-img {
     width: 100%; }
   .about__leading {

@@ -115,6 +115,9 @@
     height: 3rem;
     width: 3rem;
     transition: all 0.3s;
+    @include respond(tab-port) {
+      right: 6.5rem;
+    }
     @include respond(phone) {
       right: 3.5rem;
     }
