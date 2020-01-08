@@ -1,18 +1,4 @@
-const els = {
-  navigationButton: document.querySelector(".navigation__button"),
-  navigation: document.querySelector(".navigation"),
-  navigationModal: document.querySelector(".navigation__modal"),
-  navigationCheckbox: document.querySelector(".navigation__checkbox"),
-  header: document.querySelector(".header"),
-  router: document.querySelector(".router"),
-  tabView: document.querySelector(".tab__view"),
-  footer: document.querySelector("footer.footer"),
-  headerTextAnimated: document.querySelector(".header__text--animated"),
-  inputEmail: document.querySelector(".contact input[type='email']"),
-  inputSubject: document.querySelector(".contact input[type='text']"),
-  inputMessage: document.querySelector(".contact #message"),
-  sendButton: document.querySelector(".form > .btn-outline")
-};
+
 const headerTextList = ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"];
 let animateHeaderTextInterval;
 const handleHeaderTextAnimation = () => {

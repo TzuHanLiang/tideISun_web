@@ -1,3 +1,21 @@
+let els = {
+  navigationButton: document.querySelector(".navigation__button"),
+  navigation: document.querySelector(".navigation"),
+  navigationModal: document.querySelector(".navigation__modal"),
+  navigationCheckbox: document.querySelector(".navigation__checkbox"),
+  header: document.querySelector(".header"),
+  router: document.querySelector(".router"),
+  tabView: document.querySelector(".tab__view"),
+  footer: document.querySelector("footer.footer"),
+  headerTextAnimated: document.querySelector(".header__text--animated"),
+  inputEmail: document.querySelector(".contact input[type='email']"),
+  inputSubject: document.querySelector(".contact input[type='text']"),
+  inputMessage: document.querySelector(".contact #message"),
+  sendButton: document.querySelector(".form > .btn-outline"),
+  lnChoosers: document.querySelectorAll("[data-ln]"),
+  headerLnChoice: document.querySelector(".header__language-choices"),
+  navLnChioce: document.querySelector(".sub-menu")
+};
 const to = promise => {
   return promise
     .then(data => {
@@ -39,14 +57,14 @@ const makeRequest = opts => {
 };
 
 //https://jsfiddle.net/jamuhl/ferfywyf/#tabs=js,result,html
-const localize = locI18next.init(i18next, {
-  selectorAttr: "data-i18n", // selector for translating elements
-  targetAttr: "i18n-target",
-  optionsAttr: "i18n-options",
-  useOptionsAttr: false,
-  parseDefaultValueFromContent: true
-});
-localize("body");
+// const localize = locI18next.init(i18next, {
+//   selectorAttr: "data-i18n", // selector for translating elements
+//   targetAttr: "i18n-target",
+//   optionsAttr: "i18n-options",
+//   useOptionsAttr: false,
+//   parseDefaultValueFromContent: true
+// });
+// localize("body");
 
 const getLnText = async ln => {
   const opts = {
@@ -62,17 +80,29 @@ const getLnText = async ln => {
   }
   if (data) {
     // console.log(JSON.stringify(data));
-    return data//JSON.stringify(data);
+    return data; //JSON.stringify(data);
   }
 };
 
 const changeLn = async ln => {
   const lnText = await getLnText(ln);
-  console.log(lnText);
+  //   console.log(lnText);
   Array.from(document.querySelectorAll("[data-i18n]")).map(el => {
-      console.log(el.dataset.i18n)
-      el.innerHTML = lnText[el.dataset.i18n];
+    //   console.log(el.dataset.i18n)
+    el.innerHTML = lnText[el.dataset.i18n];
   });
 };
 
-changeLn("cn");
+
+
+const handleLnChoosser = evt => {
+  //   window.location.search = `?lang=${evt.target.dataset.ln}`;
+  const { ln } = evt.target.dataset;
+  changeLn(ln);
+  els.headerLnChoice.className = `header__language-choices ${ln}`;
+  els.navLnChioce.className = `sub-menu ${ln}`;
+};
+
+Array.from(els.lnChoosers).map(lnChooser =>
+  lnChooser.addEventListener("click", handleLnChoosser, false)
+);

@@ -448,7 +448,7 @@ body {
 
 .section__business--technology .story {
   position: relative;
-  min-height: 47.5rem;
+  min-height: 66rem;
   background-position: center; }
   .section__business--technology .story__container {
     display: grid;
@@ -862,14 +862,22 @@ body {
     align-items: center;
     flex-wrap: wrap;
     transition: 0.5s; }
-    .header__language-choices > li > a {
+    .header__language-choices.cn [data-ln='cn'] {
+      color: #E16022; }
+      .header__language-choices.cn [data-ln='cn']:hover, .header__language-choices.cn [data-ln='cn']:active {
+        color: #e7804f; }
+    .header__language-choices.tw [data-ln='tw'] {
+      color: #E16022; }
+      .header__language-choices.tw [data-ln='tw']:hover, .header__language-choices.tw [data-ln='tw']:active {
+        color: #e7804f; }
+    .header__language-choices.en [data-ln='en'] {
+      color: #E16022; }
+      .header__language-choices.en [data-ln='en']:hover, .header__language-choices.en [data-ln='en']:active {
+        color: #e7804f; }
+    .header__language-choices > li {
       font-size: 1.7rem;
       color: #a9a8a8; }
-      .header__language-choices > li > a.active {
-        color: #E16022; }
-        .header__language-choices > li > a.active:hover, .header__language-choices > li > a.active:active {
-          color: #e7804f; }
-      .header__language-choices > li > a:hover, .header__language-choices > li > a:active {
+      .header__language-choices > li:hover, .header__language-choices > li:active {
         color: #c2c2c2; }
   .header__navigation.third-el {
     min-width: 1.5%;
@@ -991,10 +999,12 @@ body {
       @media only screen and (max-width: 37.5em) {
         .navigation__item:last-child .sub-menu {
           grid-template-columns: repeat(1, 1fr); } }
-      .navigation__item:last-child .sub-menu > li > a {
+      .navigation__item:last-child .sub-menu > li {
         color: #999;
         font-size: 1.8rem; }
-        .navigation__item:last-child .sub-menu > li > a:hover, .navigation__item:last-child .sub-menu > li > a:active {
+        .navigation__item:last-child .sub-menu > li:hover, .navigation__item:last-child .sub-menu > li:active {
+          color: #EC531B; }
+        .navigation__item:last-child .sub-menu > li.active {
           color: #EC531B; }
   .navigation__checkbox {
     display: none; }

@@ -140,16 +140,43 @@
     align-items: center;
     flex-wrap: wrap;
     transition: 0.5s;
-    & > li > a {
-      font-size: 1.7rem;
-      color: $color-grey-light-3;
-      &.active {
+    &.cn{
+      & [data-ln='cn']{
         color: $color-primary-light;
         &:hover,
         &:active {
           color: lighten($color-primary-light, $amount: 10);
         }
       }
+    }
+    &.tw{
+      & [data-ln='tw']{
+        color: $color-primary-light;
+        &:hover,
+        &:active {
+          color: lighten($color-primary-light, $amount: 10);
+        }
+      }
+    }
+    &.en{
+      & [data-ln='en']{
+        color: $color-primary-light;
+        &:hover,
+        &:active {
+          color: lighten($color-primary-light, $amount: 10);
+        }
+      }
+    }
+    & > li {
+      font-size: 1.7rem;
+      color: $color-grey-light-3;
+      // &.active {
+      //   color: $color-primary-light;
+      //   &:hover,
+      //   &:active {
+      //     color: lighten($color-primary-light, $amount: 10);
+      //   }
+      // }
       &:hover,
       &:active {
         color: lighten($color: $color-grey-light-3, $amount: 10);

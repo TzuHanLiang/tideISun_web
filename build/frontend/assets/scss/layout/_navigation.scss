@@ -61,11 +61,14 @@
         grid-template-columns: repeat(1, 1fr);
       }
 
-      & > li > a {
+      & > li {
         color: $color-grey-dark-2;
         font-size: 1.8rem;
         &:hover,
         &:active {
+          color: $color-primary;
+        }
+        &.active {
           color: $color-primary;
         }
       }
