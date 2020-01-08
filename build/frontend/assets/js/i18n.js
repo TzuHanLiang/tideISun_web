@@ -92,13 +92,35 @@ const changeLn = async ln => {
     el.innerHTML = lnText[el.dataset.i18n];
   });
 };
-
-
+let headerTextList;
+const handelHeaderText = ln =>
+  ({
+    en: ["Fintech", "Media", "Financing", "Blockchain", "Investment"],
+    cn: ["金融科技", "媒体", "融资", "区块链", "投资业务"],
+    tw: ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"]
+  }[ln]);
+let animateHeaderTextInterval;
+const handleHeaderTextAnimation = () => {
+  animateHeaderTextInterval = setInterval(() => {
+    if (els.headerTextAnimated.childElementCount > 0)
+      els.headerTextAnimated.innerHTML = "";
+    console.log(headerTextList);
+    const markup = `<div class="heading-primary-1 heading-primary-1--main">${headerTextList[0]}</div>`;
+    els.headerTextAnimated.insertAdjacentHTML("afterbegin", markup);
+    headerTextList.push(headerTextList.shift());
+  }, 2000);
+};
 
 const handleLnChoosser = evt => {
   //   window.location.search = `?lang=${evt.target.dataset.ln}`;
   const { ln } = evt.target.dataset;
   changeLn(ln);
+  headerTextList = handelHeaderText(ln);
+  clearInterval(animateHeaderTextInterval);
+  handleHeaderTextAnimation();
+  ln === "en"
+    ? els.router.classList.add("en")
+    : els.router.classList.remove("en");
   els.headerLnChoice.className = `header__language-choices ${ln}`;
   els.navLnChioce.className = `sub-menu ${ln}`;
 };

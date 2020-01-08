@@ -1,20 +1,3 @@
-
-const headerTextList = ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"];
-let animateHeaderTextInterval;
-const handleHeaderTextAnimation = () => {
-  animateHeaderTextInterval = setInterval(() => {
-    if (els.headerTextAnimated.childElementCount > 0)
-      els.headerTextAnimated.innerHTML = "";
-    const markup = `<div class="heading-primary-1 heading-primary-1--main">${headerTextList[0]}</div>`;
-    els.headerTextAnimated.insertAdjacentHTML("afterbegin", markup);
-    headerTextList.push(headerTextList.shift());
-  }, 2000);
-};
-window.onload = () => {
-  handleHeaderTextAnimation();
-  router.route(window.location.hash);
-};
-
 els.navigationCheckbox.addEventListener(
   "change",
   _ => {
@@ -42,7 +25,6 @@ window.onscroll = evt => {
   }
   console.log(window.pageYOffset);
 };
-
 
 const regExp = {
   email: /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
@@ -80,22 +62,34 @@ Router.prototype.route = async hash => {
   window.scrollY = 0;
   switch (true) {
     case hash.startsWith("#about"):
-      els.router.className = "router router--about";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--about en"
+        : "router router--about";
       break;
     case hash.startsWith("#founder"):
-      els.router.className = "router router--founder";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--founder en"
+        : "router router--founder";
       break;
     case hash.startsWith("#social"):
-      els.router.className = "router router--social";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--social en"
+        : (els.router.className = "router router--social");
       break;
     case hash.startsWith("#recruiting"):
-      els.router.className = "router router--recruiting";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--recruiting en"
+        : (els.router.className = "router router--recruiting");
       break;
     case hash.startsWith("#contact"):
-      els.router.className = "router router--contact";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--contact en"
+        : (els.router.className = "router router--contact");
       break;
     default:
-      els.router.className = "router router--main";
+      els.router.className = els.router.className.includes("en")
+        ? "router router--main en"
+        : (els.router.className = "router router--main");
       break;
   }
 };
@@ -117,18 +111,21 @@ const handelTabView = evt => {
   if (evt.target.matches("[data-type='financial']")) {
     console.log(evt.target.dataset.type);
     els.tabView.className = `tab__view ${evt.target.dataset.type}`;
-
   }
   if (evt.target.matches("[data-type='technology']")) {
     console.log(evt.target.dataset.type);
     els.tabView.className = `tab__view ${evt.target.dataset.type}`;
-
   }
   if (evt.target.matches("[data-type='investment']")) {
     console.log(evt.target.dataset.type);
     els.tabView.className = `tab__view ${evt.target.dataset.type}`;
-
   }
 };
 
 els.tabView.addEventListener("click", handelTabView, false);
+
+window.onload = () => {
+  headerTextList = handelHeaderText('cn');
+  handleHeaderTextAnimation();
+  router.route(window.location.hash);
+};

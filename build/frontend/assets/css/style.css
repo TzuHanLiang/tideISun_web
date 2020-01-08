@@ -39,6 +39,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
   .router main > .recruiting,
   .router main > .contact {
     display: none; }
+  .router.en .header__sub .header__sub-text--sub {
+    opacity: 0; }
 
 @keyframes moveInLeft {
   0% {
@@ -923,6 +925,9 @@ body {
       right: 0;
       display: flex;
       text-align: left; }
+      .en .header__text--main {
+        flex-direction: row-reverse;
+        min-width: 80rem; }
     .header__text--animated {
       text-align: right; }
       .header__text--animated .heading-primary-1 {

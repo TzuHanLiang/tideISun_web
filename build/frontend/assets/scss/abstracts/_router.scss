@@ -27,4 +27,9 @@
   main > .contact {
     display: none;
   }
+  &.en {
+    & .header__sub .header__sub-text--sub {
+      opacity: 0;
+    }
+  }
 }
