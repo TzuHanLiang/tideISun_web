@@ -72,6 +72,11 @@
 	</svg>
 	<!-- material icon -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- i18next -->
+	<script src="https://unpkg.com/i18next/i18next.js"></script>
+	<script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+	<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/loc-i18next@0.1.4/loc-i18next.min.js"></script>
 	<title>首頁 - 泰德陽光集團 - TIDEiSun Group</title>
 </head>
 
@@ -86,39 +91,40 @@
 			<nav class="navigation__nav">
 				<ul class="navigation__list">
 					<li class="navigation__item">
-						<a href="#" class="navigation__link">首頁</a>
+						<a href="#" class="navigation__link" data-i18n="Home">首頁</a>
 					</li>
 					<li class="navigation__item">
-						<a href="#about" class="navigation__link">關於泰德陽光</a>
+						<a href="#about" class="navigation__link" data-i18n="About TideiSun">關於泰德陽光</a>
 					</li>
 					<!-- <li class="navigation__item">
-					<a href="#founder" class="navigation__link">關於創辦人</a>
+					<a href="#founder" class="navigation__link" data-i18n="About Founder">關於創辦人</a>
 				</li>
 				<li class="navigation__item">
-					<a href="#blog" class="navigation__link">產品新聞</a>
+					<a href="#blog" class="navigation__link" data-i18n="Product News">產品新聞</a>
 				</li> -->
 					<li class="navigation__item">
-						<a href="#social" class="navigation__link">社群連結</a>
+						<a href="#social" class="navigation__link" data-i18n="Social Media">社群連結</a>
 					</li>
 					<li class="navigation__item">
-						<a href="#recruiting" class="navigation__link">人才招募</a>
+						<a href="#recruiting" class="navigation__link" data-i18n="Careers">人才招募</a>
 					</li>
 					<li class="navigation__item">
-						<a href="#contact" class="navigation__link">聯絡我們</a>
+						<a href="#contact" class="navigation__link" data-i18n="Contact us">聯絡我們</a>
 					</li>
 					<li class="navigation__item ">
 						<ul class="sub-menu">
 							<li id="menu-item-6041"
 								class="qtranxs-lang-menu-item qtranxs-lang-menu-item-tw menu-item menu-item-type-custom menu-item-object-custom menu-item-6041">
-								<a title="繁中" href="https://tideisun.com/?lang=tw">繁中</a>
+								<a title="繁中" href="https://tideisun.com/?lang=tw"
+									data-i18n="Traditional Chinese">繁中</a>
 							</li>
 							<li id="menu-item-6042"
 								class="qtranxs-lang-menu-item qtranxs-lang-menu-item-zh menu-item menu-item-type-custom menu-item-object-custom menu-item-6042">
-								<a title="簡中" href="https://tideisun.com/?lang=zh">簡中</a>
+								<a title="簡中" href="https://tideisun.com/?lang=zh" data-i18n="Simplified Chinese">簡中</a>
 							</li>
 							<li id="menu-item-6043"
 								class="qtranxs-lang-menu-item qtranxs-lang-menu-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-6043">
-								<a title="English" href="https://tideisun.com/?lang=en">English</a>
+								<a title="English" href="https://tideisun.com/?lang=en" data-i18n="English">English</a>
 							</li>
 						</ul>
 					</li>
@@ -236,8 +242,9 @@
 							</div>
 						</div>
 						<div class="leading-text-box u-margin-bottom-big">
-							<p class="paragraph paragraph--leading u-center-text ">	
-								泰德陽光 TideiSun Group 是具有雄厚資源的，以思想與商業模式創新爲先導的，新金融、新科技、新媒體集團，總部位于香港，在美國、日本、臺灣、中國、馬來西亞、新加坡、土耳其均有分部。集團經營管理上市和非上市公司，引導私募資本擁抱新通證經濟，加速區塊鏈技術的企業級應用，解决數字貨幣和自由法幣的通兌，促進數字資産的新生和流通。
+							<p class="paragraph paragraph--leading u-center-text ">
+								泰德陽光 TideiSun Group
+								是具有雄厚資源的，以思想與商業模式創新爲先導的，新金融、新科技、新媒體集團，總部位于香港，在美國、日本、臺灣、中國、馬來西亞、新加坡、土耳其均有分部。集團經營管理上市和非上市公司，引導私募資本擁抱新通證經濟，加速區塊鏈技術的企業級應用，解决數字貨幣和自由法幣的通兌，促進數字資産的新生和流通。
 							</p>
 						</div>
 						<div class="feature-box__container">
@@ -745,7 +752,8 @@
 						<div class="line-seperate"></div>
 						<div class="about__leading--sub">
 							<div class="about__leading--paragraph">
-								泰德陽光 TideiSun Group 是具有雄厚資源的，以思想與商業模式創新爲先導的，新金融、新科技、新媒體集團，總部位于香港，在美國、日本、臺灣、中國、馬來西亞、新加坡、土耳其均有分部。集團經營管理上市和非上市公司，引導私募資本擁抱新通證經濟，加速區塊鏈技術的企業級應用，解决數字貨幣和自由法幣的通兌，促進數字資産的新生和流通。
+								泰德陽光 TideiSun Group
+								是具有雄厚資源的，以思想與商業模式創新爲先導的，新金融、新科技、新媒體集團，總部位于香港，在美國、日本、臺灣、中國、馬來西亞、新加坡、土耳其均有分部。集團經營管理上市和非上市公司，引導私募資本擁抱新通證經濟，加速區塊鏈技術的企業級應用，解决數字貨幣和自由法幣的通兌，促進數字資産的新生和流通。
 							</div>
 						</div>
 					</div>
@@ -1449,6 +1457,7 @@
 		<p>Copyright &copy; TideiSun Group 泰德陽光集團. All rights reserved.</p>
 	</footer>
 </body>
+<script src="./assets/js/i18n.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </html>
