@@ -14,7 +14,8 @@ let els = {
   sendButton: document.querySelector(".form > .btn-outline"),
   lnChoosers: document.querySelectorAll("[data-ln]"),
   headerLnChoice: document.querySelector(".header__language-choices"),
-  navLnChioce: document.querySelector(".sub-menu")
+  navLnChioce: document.querySelector(".sub-menu"),
+  html: document.querySelector("html")
 };
 const to = promise => {
   return promise
@@ -66,6 +67,25 @@ const makeRequest = opts => {
 // });
 // localize("body");
 
+let headerTextList, animateHeaderTextInterval;
+
+const handelHeaderText = ln =>
+  ({
+    en: ["Fintech", "Media", "Financing", "Blockchain", "Investment"],
+    cn: ["金融科技", "媒体", "融资", "区块链", "投资业务"],
+    tw: ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"]
+  }[ln]);
+
+const handleHeaderTextAnimation = () => {
+  animateHeaderTextInterval = setInterval(() => {
+    if (els.headerTextAnimated.childElementCount > 0)
+      els.headerTextAnimated.innerHTML = "";
+    const markup = `<div class="heading-primary-1 heading-primary-1--main">${headerTextList[0]}</div>`;
+    els.headerTextAnimated.insertAdjacentHTML("afterbegin", markup);
+    headerTextList.push(headerTextList.shift());
+  }, 2000);
+};
+
 const getLnText = async ln => {
   const opts = {
     contentType: "application/json",
@@ -79,48 +99,36 @@ const getLnText = async ln => {
     // throw new Error(err)
   }
   if (data) {
-    // console.log(JSON.stringify(data));
     return data; //JSON.stringify(data);
   }
 };
 
 const changeLn = async ln => {
   const lnText = await getLnText(ln);
-  //   console.log(lnText);
   Array.from(document.querySelectorAll("[data-i18n]")).map(el => {
-    //   console.log(el.dataset.i18n)
     el.innerHTML = lnText[el.dataset.i18n];
   });
 };
-let headerTextList;
-const handelHeaderText = ln =>
-  ({
-    en: ["Fintech", "Media", "Financing", "Blockchain", "Investment"],
-    cn: ["金融科技", "媒体", "融资", "区块链", "投资业务"],
-    tw: ["金融科技", "媒體", "融資", "區塊鏈", "投資業務"]
-  }[ln]);
-let animateHeaderTextInterval;
-const handleHeaderTextAnimation = () => {
-  animateHeaderTextInterval = setInterval(() => {
-    if (els.headerTextAnimated.childElementCount > 0)
-      els.headerTextAnimated.innerHTML = "";
-    console.log(headerTextList);
-    const markup = `<div class="heading-primary-1 heading-primary-1--main">${headerTextList[0]}</div>`;
-    els.headerTextAnimated.insertAdjacentHTML("afterbegin", markup);
-    headerTextList.push(headerTextList.shift());
-  }, 2000);
-};
 
 const handleLnChoosser = evt => {
-  //   window.location.search = `?lang=${evt.target.dataset.ln}`;
-  const { ln } = evt.target.dataset;
-  changeLn(ln);
+  if (evt) {
+    window.location.search = `?lang=${evt.target.dataset.ln}`;
+  }
+  if (window.location.href.includes(`?lang=`))
+    els.html.lang = els.html.lang = window.location.href
+      .replace(`${window.location.origin}${window.location.pathname}?lang=`, "")
+      .replace(`${window.location.hash}`, "");
+
+  let ln = els.html.lang;
   headerTextList = handelHeaderText(ln);
   clearInterval(animateHeaderTextInterval);
+  changeLn(ln);
   handleHeaderTextAnimation();
+  els.html.lang = ln;
   ln === "en"
     ? els.router.classList.add("en")
     : els.router.classList.remove("en");
+
   els.headerLnChoice.className = `header__language-choices ${ln}`;
   els.navLnChioce.className = `sub-menu ${ln}`;
 };

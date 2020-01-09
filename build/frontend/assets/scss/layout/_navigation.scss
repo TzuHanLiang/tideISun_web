@@ -17,7 +17,9 @@
     left: 0;
     width:  calc(100vw / 3*2);
     height: 100vh;
-
+    @include respond(phone) {
+      width: calc(100vw / 2);
+    }
   }
 
   &__nav {
@@ -105,7 +107,7 @@
   &__checkbox:checked ~ & > &__modal + &__nav {
     left: calc(2 * 100vw / 3);
     @include respond(phone) {
-      left: calc(100vw / 2);
+      left: calc(100vw / 2 + 1rem);
     }
   }
 
@@ -123,6 +125,11 @@
     }
     @include respond(phone) {
       right: 3.5rem;
+    }
+    .en & {
+      @include respond(phone) {
+        // right: 22rem;
+      }
     }
     &.scrolled {
       top: 3.5rem;

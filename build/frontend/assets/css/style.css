@@ -760,7 +760,8 @@ body {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
-  z-index: 100; }
+  z-index: 100;
+  overflow: hidden; }
   .header__main {
     display: none;
     height: 100vh;
@@ -864,17 +865,17 @@ body {
     align-items: center;
     flex-wrap: wrap;
     transition: 0.5s; }
-    .header__language-choices.cn [data-ln='cn'] {
+    .header__language-choices.cn [data-ln="cn"] {
       color: #E16022; }
-      .header__language-choices.cn [data-ln='cn']:hover, .header__language-choices.cn [data-ln='cn']:active {
+      .header__language-choices.cn [data-ln="cn"]:hover, .header__language-choices.cn [data-ln="cn"]:active {
         color: #e7804f; }
-    .header__language-choices.tw [data-ln='tw'] {
+    .header__language-choices.tw [data-ln="tw"] {
       color: #E16022; }
-      .header__language-choices.tw [data-ln='tw']:hover, .header__language-choices.tw [data-ln='tw']:active {
+      .header__language-choices.tw [data-ln="tw"]:hover, .header__language-choices.tw [data-ln="tw"]:active {
         color: #e7804f; }
-    .header__language-choices.en [data-ln='en'] {
+    .header__language-choices.en [data-ln="en"] {
       color: #E16022; }
-      .header__language-choices.en [data-ln='en']:hover, .header__language-choices.en [data-ln='en']:active {
+      .header__language-choices.en [data-ln="en"]:hover, .header__language-choices.en [data-ln="en"]:active {
         color: #e7804f; }
     .header__language-choices > li {
       font-size: 1.7rem;
@@ -916,7 +917,10 @@ body {
         min-width: 50rem; } }
     @media only screen and (max-width: 37.5em) {
       .header__text-box {
-        min-width: 42rem; } }
+        min-width: 40rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .en .header__text-box {
+        min-width: 36rem; } }
   .header__text {
     position: relative; }
     .header__text--main {
@@ -927,12 +931,35 @@ body {
       text-align: left; }
       .en .header__text--main {
         flex-direction: row-reverse;
-        min-width: 80rem; }
+        min-width: 80rem;
+        transform: translate(50%, 0);
+        right: 50%; }
+        @media only screen and (max-width: 37.5em) {
+          .en .header__text--main {
+            min-width: calc(100vw - 1rem); } }
     .header__text--animated {
       text-align: right; }
       .header__text--animated .heading-primary-1 {
         opacity: 0;
         animation: moveInAOut 1s ease-out 0s; }
+      .en .header__text--animated {
+        text-align: left;
+        min-width: 36rem;
+        margin-left: 2rem; }
+        .en .header__text--animated .heading-primary-1 {
+          opacity: 0;
+          animation: moveInAOut 1s ease-out 0s reverse; }
+          @media only screen and (max-width: 37.5em) {
+            .en .header__text--animated .heading-primary-1 {
+              font-size: 4.2rem; } }
+        @media only screen and (max-width: 37.5em) {
+          .en .header__text--animated {
+            margin-left: 1rem;
+            min-width: calc(100vw - 1rem - 25rem); } }
+    @media only screen and (max-width: 37.5em) {
+      .en .header__text--fixed {
+        font-size: 4.2rem;
+        min-width: 25rem; } }
     .header__text--sub {
       margin-top: 12rem;
       text-align: left; }
@@ -945,9 +972,15 @@ body {
             right: -3rem;
             bottom: 1rem;
             font-size: 1.6rem; }
+          @media only screen and (max-width: 37.5em) {
+            .en .header__text--sub .heading-primary-2--main {
+              font-size: 3.2rem; } }
         .header__text--sub .heading-primary-2--sub {
           font-weight: 300;
           font-size: 1.7rem; }
+          @media only screen and (max-width: 37.5em) {
+            .en .header__text--sub .heading-primary-2--sub {
+              font-size: 1.5rem; } }
 
 .navigation {
   z-index: 1500;
@@ -967,6 +1000,9 @@ body {
     left: 0;
     width: calc(100vw / 3*2);
     height: 100vh; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__modal {
+        width: calc(100vw / 2); } }
   .navigation__nav {
     pointer-events: stroke;
     background-color: #fff;
@@ -1029,7 +1065,7 @@ body {
     left: calc(2 * 100vw / 3); }
     @media only screen and (max-width: 37.5em) {
       .navigation__checkbox:checked ~ .navigation > .navigation__modal + .navigation__nav {
-        left: calc(100vw / 2); } }
+        left: calc(100vw / 2 + 1rem); } }
   .navigation__button {
     z-index: 2000;
     cursor: pointer;

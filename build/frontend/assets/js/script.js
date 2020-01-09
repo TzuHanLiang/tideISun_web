@@ -1,16 +1,15 @@
-els.navigationCheckbox.addEventListener(
-  "change",
-  _ => {
-    els.navigationCheckbox.checked
-      ? (els.navigationModal.style.pointerEvents = "stroke")
-      : (els.navigationModal.style.pointerEvents = "none");
-  },
-  false
-);
+const handelNavModal = _ => {
+  els.navigationCheckbox.checked
+    ? (els.navigationModal.style.pointerEvents = "stroke")
+    : (els.navigationModal.style.pointerEvents = "none");
+};
+els.navigationCheckbox.addEventListener("change", handelNavModal, false);
 els.navigation.addEventListener(
   "click",
   _ => {
+    // console.log("nav", els.navigationCheckbox.checked);
     els.navigationCheckbox.checked = false;
+    handelNavModal();
   },
   false
 );
@@ -125,7 +124,10 @@ const handelTabView = evt => {
 els.tabView.addEventListener("click", handelTabView, false);
 
 window.onload = () => {
-  headerTextList = handelHeaderText('cn');
-  handleHeaderTextAnimation();
+  handleLnChoosser();
   router.route(window.location.hash);
+};
+
+window.onlanguagechange = _ => {
+  console.log("change");
 };
