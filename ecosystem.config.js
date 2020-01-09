@@ -29,7 +29,7 @@ module.exports = {
       user : 'ubuntu',
       // 要部署到的主機的IP地址
       key  : `${process.env.HOME}/.ssh/tideiSun.pem`, // 進行身份驗證的公鑰的路徑
-      host : '13.113.22.215', // 也可以通過將IPs /主機名以arry傳入來實現多主機部署
+      host : '3.115.206.46', // 也可以通過將IPs /主機名以arry傳入來實現多主機部署
       // branch （分支）
       ref  : 'origin/master',
       // 要 clone 的 Git repository
