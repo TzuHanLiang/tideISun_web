@@ -33,7 +33,7 @@ module.exports = {
       // branch （分支）
       ref  : 'origin/master',
       // 要 clone 的 Git repository
-      repo : 'https://github.com/BOLT-Protocol/TideiSunOfficial.git',
+      repo : 'git@github.com:BOLT-Protocol/TideiSunOfficial.git',
       // 目標服務器上應用程序的路徑
       path : '/etc/TideiSunOfficial',
       // cloned後要在服務器上執行的命令
